@@ -15,8 +15,8 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/frgrisk/gomarkdoc/logger"
 	"github.com/go-git/go-git/v5"
-	"github.com/princjef/gomarkdoc/logger"
 )
 
 type (

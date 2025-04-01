@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"testing"
 
+	"github.com/frgrisk/gomarkdoc/format"
+	"github.com/frgrisk/gomarkdoc/lang"
 	"github.com/matryer/is"
-	"github.com/princjef/gomarkdoc/format"
-	"github.com/princjef/gomarkdoc/lang"
 )
 
 func TestGitHubFlavoredMarkdown_Bold(t *testing.T) {

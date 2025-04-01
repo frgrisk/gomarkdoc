@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/matryer/is"
-	"github.com/princjef/gomarkdoc/lang"
-	"github.com/princjef/gomarkdoc/logger"
+	"github.com/frgrisk/gomarkdoc/lang"
+	"github.com/frgrisk/gomarkdoc/logger"
 )
 
 func TestType_Examples(t *testing.T) {

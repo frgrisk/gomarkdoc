@@ -7,11 +7,11 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/frgrisk/gomarkdoc"
+	"github.com/frgrisk/gomarkdoc/format/formatcore"
+	"github.com/frgrisk/gomarkdoc/lang"
+	"github.com/frgrisk/gomarkdoc/logger"
 	"github.com/matryer/is"
-	"github.com/princjef/gomarkdoc"
-	"github.com/princjef/gomarkdoc/format/formatcore"
-	"github.com/princjef/gomarkdoc/lang"
-	"github.com/princjef/gomarkdoc/logger"
 )
 
 func TestWithTemplateFunc(t *testing.T) {

@@ -100,6 +100,7 @@ func buildCommand() *cobra.Command {
 			opts.excludeDirs = viper.GetStringSlice("excludeDirs")
 			opts.repository.Remote = viper.GetString("repository.url")
 			opts.repository.DefaultBranch = viper.GetString("repository.defaultBranch")
+			opts.repository.SkipRemote = viper.GetBool("repository.skipRemote")
 			opts.repository.PathFromRoot = viper.GetString("repository.path")
 
 			if opts.check && opts.output == "" {
@@ -223,6 +224,12 @@ func buildCommand() *cobra.Command {
 		"",
 		"Manual override for the git repository URL used in place of automatic detection.",
 	)
+	command.Flags().BoolVar(
+		&opts.repository.SkipRemote,
+		"repository.skip-remote",
+		false,
+		"Do not print links to the repository in the documentation.",
+	)
 	command.Flags().StringVar(
 		&opts.repository.PathFromRoot,
 		"repository.path",
@@ -252,6 +259,7 @@ func buildCommand() *cobra.Command {
 	_ = viper.BindPFlag("excludeDirs", command.Flags().Lookup("exclude-dirs"))
 	_ = viper.BindPFlag("repository.url", command.Flags().Lookup("repository.url"))
 	_ = viper.BindPFlag("repository.defaultBranch", command.Flags().Lookup("repository.default-branch"))
+	_ = viper.BindPFlag("repository.skipRemote", command.Flags().Lookup("repository.skip-remote"))
 	_ = viper.BindPFlag("repository.path", command.Flags().Lookup("repository.path"))
 
 	return command

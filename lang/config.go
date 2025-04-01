@@ -38,6 +38,7 @@ type (
 	// generation.
 	Repo struct {
 		Remote        string
+		SkipRemote    bool
 		DefaultBranch string
 		PathFromRoot  string
 	}
@@ -98,7 +99,10 @@ func NewConfig(log logger.Logger, workDir string, pkgDir string, opts ...ConfigO
 
 	cfg.Files = files
 
-	if cfg.Repo == nil || cfg.Repo.Remote == "" || cfg.Repo.DefaultBranch == "" || cfg.Repo.PathFromRoot == "" {
+	if cfg.Repo.SkipRemote == true {
+		log.Debugf("skipping repository resolution because --repository.skip-remote is true")
+		cfg.Repo = nil
+	} else if cfg.Repo == nil || cfg.Repo.Remote == "" || cfg.Repo.DefaultBranch == "" || cfg.Repo.PathFromRoot == "" {
 		repo, err := getRepoForDir(log, cfg.WorkDir, cfg.PkgDir, cfg.Repo)
 		if err != nil {
 			log.Infof("unable to resolve repository due to error: %s", err)

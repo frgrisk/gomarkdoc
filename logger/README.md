@@ -12,9 +12,9 @@ Package logger provides a simple console logger for reporting information about 
 
 - [type Level](<#Level>)
 - [type Logger](<#Logger>)
-  - [func New\(level Level, opts ...Option\) Logger](<#New>)
+    - [func New\(level Level, opts ...Option\) Logger](<#New>)
 - [type Option](<#Option>)
-  - [func WithField\(key string, value interface\{\}\) Option](<#WithField>)
+    - [func WithField\(key string, value interface\{\}\) Option](<#WithField>)
 
 
 <a name="Level"></a>

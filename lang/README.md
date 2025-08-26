@@ -12,116 +12,116 @@ Package lang provides constructs for defining golang language constructs and ext
 
 - [func PackageSymbols\(pkg \*doc.Package\) map\[string\]Symbol](<#PackageSymbols>)
 - [type Block](<#Block>)
-  - [func NewBlock\(cfg \*Config, kind BlockKind, spans \[\]\*Span, inline bool\) \*Block](<#NewBlock>)
-  - [func NewListBlock\(cfg \*Config, list \*List, inline bool\) \*Block](<#NewListBlock>)
-  - [func ParseBlocks\(cfg \*Config, blocks \[\]comment.Block, inline bool\) \[\]\*Block](<#ParseBlocks>)
-  - [func \(b \*Block\) Inline\(\) bool](<#Block.Inline>)
-  - [func \(b \*Block\) Kind\(\) BlockKind](<#Block.Kind>)
-  - [func \(b \*Block\) Level\(\) int](<#Block.Level>)
-  - [func \(b \*Block\) List\(\) \*List](<#Block.List>)
-  - [func \(b \*Block\) Spans\(\) \[\]\*Span](<#Block.Spans>)
+    - [func NewBlock\(cfg \*Config, kind BlockKind, spans \[\]\*Span, inline bool\) \*Block](<#NewBlock>)
+    - [func NewListBlock\(cfg \*Config, list \*List, inline bool\) \*Block](<#NewListBlock>)
+    - [func ParseBlocks\(cfg \*Config, blocks \[\]comment.Block, inline bool\) \[\]\*Block](<#ParseBlocks>)
+    - [func \(b \*Block\) Inline\(\) bool](<#Block.Inline>)
+    - [func \(b \*Block\) Kind\(\) BlockKind](<#Block.Kind>)
+    - [func \(b \*Block\) Level\(\) int](<#Block.Level>)
+    - [func \(b \*Block\) List\(\) \*List](<#Block.List>)
+    - [func \(b \*Block\) Spans\(\) \[\]\*Span](<#Block.Spans>)
 - [type BlockKind](<#BlockKind>)
 - [type Config](<#Config>)
-  - [func NewConfig\(log logger.Logger, workDir string, pkgDir string, opts ...ConfigOption\) \(\*Config, error\)](<#NewConfig>)
-  - [func \(c \*Config\) Inc\(step int\) \*Config](<#Config.Inc>)
+    - [func NewConfig\(log logger.Logger, workDir string, pkgDir string, opts ...ConfigOption\) \(\*Config, error\)](<#NewConfig>)
+    - [func \(c \*Config\) Inc\(step int\) \*Config](<#Config.Inc>)
 - [type ConfigOption](<#ConfigOption>)
-  - [func ConfigWithRepoOverrides\(overrides \*Repo\) ConfigOption](<#ConfigWithRepoOverrides>)
+    - [func ConfigWithRepoOverrides\(overrides \*Repo\) ConfigOption](<#ConfigWithRepoOverrides>)
 - [type Doc](<#Doc>)
-  - [func NewDoc\(cfg \*Config, text string\) \*Doc](<#NewDoc>)
-  - [func \(d \*Doc\) Blocks\(\) \[\]\*Block](<#Doc.Blocks>)
-  - [func \(d \*Doc\) Level\(\) int](<#Doc.Level>)
+    - [func NewDoc\(cfg \*Config, text string\) \*Doc](<#NewDoc>)
+    - [func \(d \*Doc\) Blocks\(\) \[\]\*Block](<#Doc.Blocks>)
+    - [func \(d \*Doc\) Level\(\) int](<#Doc.Level>)
 - [type Example](<#Example>)
-  - [func NewExample\(cfg \*Config, name string, doc \*doc.Example\) \*Example](<#NewExample>)
-  - [func \(ex \*Example\) Code\(\) \(string, error\)](<#Example.Code>)
-  - [func \(ex \*Example\) Doc\(\) \*Doc](<#Example.Doc>)
-  - [func \(ex \*Example\) HasOutput\(\) bool](<#Example.HasOutput>)
-  - [func \(ex \*Example\) Level\(\) int](<#Example.Level>)
-  - [func \(ex \*Example\) Location\(\) Location](<#Example.Location>)
-  - [func \(ex \*Example\) Name\(\) string](<#Example.Name>)
-  - [func \(ex \*Example\) Output\(\) string](<#Example.Output>)
-  - [func \(ex \*Example\) Summary\(\) string](<#Example.Summary>)
-  - [func \(ex \*Example\) Title\(\) string](<#Example.Title>)
+    - [func NewExample\(cfg \*Config, name string, doc \*doc.Example\) \*Example](<#NewExample>)
+    - [func \(ex \*Example\) Code\(\) \(string, error\)](<#Example.Code>)
+    - [func \(ex \*Example\) Doc\(\) \*Doc](<#Example.Doc>)
+    - [func \(ex \*Example\) HasOutput\(\) bool](<#Example.HasOutput>)
+    - [func \(ex \*Example\) Level\(\) int](<#Example.Level>)
+    - [func \(ex \*Example\) Location\(\) Location](<#Example.Location>)
+    - [func \(ex \*Example\) Name\(\) string](<#Example.Name>)
+    - [func \(ex \*Example\) Output\(\) string](<#Example.Output>)
+    - [func \(ex \*Example\) Summary\(\) string](<#Example.Summary>)
+    - [func \(ex \*Example\) Title\(\) string](<#Example.Title>)
 - [type File](<#File>)
-  - [func NewFile\(header, footer string, packages \[\]\*Package\) \*File](<#NewFile>)
+    - [func NewFile\(header, footer string, packages \[\]\*Package\) \*File](<#NewFile>)
 - [type Func](<#Func>)
-  - [func NewFunc\(cfg \*Config, doc \*doc.Func, examples \[\]\*doc.Example\) \*Func](<#NewFunc>)
-  - [func \(fn \*Func\) Anchor\(\) string](<#Func.Anchor>)
-  - [func \(fn \*Func\) Doc\(\) \*Doc](<#Func.Doc>)
-  - [func \(fn \*Func\) Examples\(\) \(examples \[\]\*Example\)](<#Func.Examples>)
-  - [func \(fn \*Func\) Level\(\) int](<#Func.Level>)
-  - [func \(fn \*Func\) Location\(\) Location](<#Func.Location>)
-  - [func \(fn \*Func\) Name\(\) string](<#Func.Name>)
-  - [func \(fn \*Func\) Receiver\(\) string](<#Func.Receiver>)
-  - [func \(fn \*Func\) Signature\(\) \(string, error\)](<#Func.Signature>)
-  - [func \(fn \*Func\) Summary\(\) string](<#Func.Summary>)
-  - [func \(fn \*Func\) Title\(\) string](<#Func.Title>)
+    - [func NewFunc\(cfg \*Config, doc \*doc.Func, examples \[\]\*doc.Example\) \*Func](<#NewFunc>)
+    - [func \(fn \*Func\) Anchor\(\) string](<#Func.Anchor>)
+    - [func \(fn \*Func\) Doc\(\) \*Doc](<#Func.Doc>)
+    - [func \(fn \*Func\) Examples\(\) \(examples \[\]\*Example\)](<#Func.Examples>)
+    - [func \(fn \*Func\) Level\(\) int](<#Func.Level>)
+    - [func \(fn \*Func\) Location\(\) Location](<#Func.Location>)
+    - [func \(fn \*Func\) Name\(\) string](<#Func.Name>)
+    - [func \(fn \*Func\) Receiver\(\) string](<#Func.Receiver>)
+    - [func \(fn \*Func\) Signature\(\) \(string, error\)](<#Func.Signature>)
+    - [func \(fn \*Func\) Summary\(\) string](<#Func.Summary>)
+    - [func \(fn \*Func\) Title\(\) string](<#Func.Title>)
 - [type Item](<#Item>)
-  - [func NewItem\(cfg \*Config, docItem \*comment.ListItem\) \*Item](<#NewItem>)
-  - [func \(i \*Item\) Blocks\(\) \[\]\*Block](<#Item.Blocks>)
-  - [func \(i \*Item\) Kind\(\) ItemKind](<#Item.Kind>)
-  - [func \(i \*Item\) Number\(\) int](<#Item.Number>)
+    - [func NewItem\(cfg \*Config, docItem \*comment.ListItem\) \*Item](<#NewItem>)
+    - [func \(i \*Item\) Blocks\(\) \[\]\*Block](<#Item.Blocks>)
+    - [func \(i \*Item\) Kind\(\) ItemKind](<#Item.Kind>)
+    - [func \(i \*Item\) Number\(\) int](<#Item.Number>)
 - [type ItemKind](<#ItemKind>)
 - [type List](<#List>)
-  - [func NewList\(cfg \*Config, docList \*comment.List\) \*List](<#NewList>)
-  - [func \(l \*List\) BlankBetween\(\) bool](<#List.BlankBetween>)
-  - [func \(l \*List\) Items\(\) \[\]\*Item](<#List.Items>)
+    - [func NewList\(cfg \*Config, docList \*comment.List\) \*List](<#NewList>)
+    - [func \(l \*List\) BlankBetween\(\) bool](<#List.BlankBetween>)
+    - [func \(l \*List\) Items\(\) \[\]\*Item](<#List.Items>)
 - [type Location](<#Location>)
-  - [func NewLocation\(cfg \*Config, node ast.Node\) Location](<#NewLocation>)
+    - [func NewLocation\(cfg \*Config, node ast.Node\) Location](<#NewLocation>)
 - [type Package](<#Package>)
-  - [func NewPackage\(cfg \*Config, examples \[\]\*doc.Example\) \*Package](<#NewPackage>)
-  - [func NewPackageFromBuild\(log logger.Logger, pkg \*build.Package, opts ...PackageOption\) \(\*Package, error\)](<#NewPackageFromBuild>)
-  - [func \(pkg \*Package\) Consts\(\) \(consts \[\]\*Value\)](<#Package.Consts>)
-  - [func \(pkg \*Package\) Dir\(\) string](<#Package.Dir>)
-  - [func \(pkg \*Package\) Dirname\(\) string](<#Package.Dirname>)
-  - [func \(pkg \*Package\) Doc\(\) \*Doc](<#Package.Doc>)
-  - [func \(pkg \*Package\) Examples\(\) \(examples \[\]\*Example\)](<#Package.Examples>)
-  - [func \(pkg \*Package\) Funcs\(\) \(funcs \[\]\*Func\)](<#Package.Funcs>)
-  - [func \(pkg \*Package\) Import\(\) string](<#Package.Import>)
-  - [func \(pkg \*Package\) ImportPath\(\) string](<#Package.ImportPath>)
-  - [func \(pkg \*Package\) Level\(\) int](<#Package.Level>)
-  - [func \(pkg \*Package\) Name\(\) string](<#Package.Name>)
-  - [func \(pkg \*Package\) Summary\(\) string](<#Package.Summary>)
-  - [func \(pkg \*Package\) Types\(\) \(types \[\]\*Type\)](<#Package.Types>)
-  - [func \(pkg \*Package\) Vars\(\) \(vars \[\]\*Value\)](<#Package.Vars>)
+    - [func NewPackage\(cfg \*Config, examples \[\]\*doc.Example\) \*Package](<#NewPackage>)
+    - [func NewPackageFromBuild\(log logger.Logger, pkg \*build.Package, opts ...PackageOption\) \(\*Package, error\)](<#NewPackageFromBuild>)
+    - [func \(pkg \*Package\) Consts\(\) \(consts \[\]\*Value\)](<#Package.Consts>)
+    - [func \(pkg \*Package\) Dir\(\) string](<#Package.Dir>)
+    - [func \(pkg \*Package\) Dirname\(\) string](<#Package.Dirname>)
+    - [func \(pkg \*Package\) Doc\(\) \*Doc](<#Package.Doc>)
+    - [func \(pkg \*Package\) Examples\(\) \(examples \[\]\*Example\)](<#Package.Examples>)
+    - [func \(pkg \*Package\) Funcs\(\) \(funcs \[\]\*Func\)](<#Package.Funcs>)
+    - [func \(pkg \*Package\) Import\(\) string](<#Package.Import>)
+    - [func \(pkg \*Package\) ImportPath\(\) string](<#Package.ImportPath>)
+    - [func \(pkg \*Package\) Level\(\) int](<#Package.Level>)
+    - [func \(pkg \*Package\) Name\(\) string](<#Package.Name>)
+    - [func \(pkg \*Package\) Summary\(\) string](<#Package.Summary>)
+    - [func \(pkg \*Package\) Types\(\) \(types \[\]\*Type\)](<#Package.Types>)
+    - [func \(pkg \*Package\) Vars\(\) \(vars \[\]\*Value\)](<#Package.Vars>)
 - [type PackageOption](<#PackageOption>)
-  - [func PackageWithRepositoryOverrides\(repo \*Repo\) PackageOption](<#PackageWithRepositoryOverrides>)
-  - [func PackageWithUnexportedIncluded\(\) PackageOption](<#PackageWithUnexportedIncluded>)
+    - [func PackageWithRepositoryOverrides\(repo \*Repo\) PackageOption](<#PackageWithRepositoryOverrides>)
+    - [func PackageWithUnexportedIncluded\(\) PackageOption](<#PackageWithUnexportedIncluded>)
 - [type PackageOptions](<#PackageOptions>)
 - [type Position](<#Position>)
 - [type Repo](<#Repo>)
 - [type Span](<#Span>)
-  - [func NewSpan\(cfg \*Config, kind SpanKind, text string, url string\) \*Span](<#NewSpan>)
-  - [func ParseSpans\(cfg \*Config, texts \[\]comment.Text\) \[\]\*Span](<#ParseSpans>)
-  - [func \(s \*Span\) Kind\(\) SpanKind](<#Span.Kind>)
-  - [func \(s \*Span\) Text\(\) string](<#Span.Text>)
-  - [func \(s \*Span\) URL\(\) string](<#Span.URL>)
+    - [func NewSpan\(cfg \*Config, kind SpanKind, text string, url string\) \*Span](<#NewSpan>)
+    - [func ParseSpans\(cfg \*Config, texts \[\]comment.Text\) \[\]\*Span](<#ParseSpans>)
+    - [func \(s \*Span\) Kind\(\) SpanKind](<#Span.Kind>)
+    - [func \(s \*Span\) Text\(\) string](<#Span.Text>)
+    - [func \(s \*Span\) URL\(\) string](<#Span.URL>)
 - [type SpanKind](<#SpanKind>)
 - [type Symbol](<#Symbol>)
-  - [func \(s Symbol\) Anchor\(\) string](<#Symbol.Anchor>)
+    - [func \(s Symbol\) Anchor\(\) string](<#Symbol.Anchor>)
 - [type SymbolKind](<#SymbolKind>)
 - [type Type](<#Type>)
-  - [func NewType\(cfg \*Config, doc \*doc.Type, examples \[\]\*doc.Example\) \*Type](<#NewType>)
-  - [func \(typ \*Type\) Anchor\(\) string](<#Type.Anchor>)
-  - [func \(typ \*Type\) Consts\(\) \[\]\*Value](<#Type.Consts>)
-  - [func \(typ \*Type\) Decl\(\) \(string, error\)](<#Type.Decl>)
-  - [func \(typ \*Type\) Doc\(\) \*Doc](<#Type.Doc>)
-  - [func \(typ \*Type\) Examples\(\) \(examples \[\]\*Example\)](<#Type.Examples>)
-  - [func \(typ \*Type\) Funcs\(\) \[\]\*Func](<#Type.Funcs>)
-  - [func \(typ \*Type\) Level\(\) int](<#Type.Level>)
-  - [func \(typ \*Type\) Location\(\) Location](<#Type.Location>)
-  - [func \(typ \*Type\) Methods\(\) \[\]\*Func](<#Type.Methods>)
-  - [func \(typ \*Type\) Name\(\) string](<#Type.Name>)
-  - [func \(typ \*Type\) Summary\(\) string](<#Type.Summary>)
-  - [func \(typ \*Type\) Title\(\) string](<#Type.Title>)
-  - [func \(typ \*Type\) Vars\(\) \[\]\*Value](<#Type.Vars>)
+    - [func NewType\(cfg \*Config, doc \*doc.Type, examples \[\]\*doc.Example\) \*Type](<#NewType>)
+    - [func \(typ \*Type\) Anchor\(\) string](<#Type.Anchor>)
+    - [func \(typ \*Type\) Consts\(\) \[\]\*Value](<#Type.Consts>)
+    - [func \(typ \*Type\) Decl\(\) \(string, error\)](<#Type.Decl>)
+    - [func \(typ \*Type\) Doc\(\) \*Doc](<#Type.Doc>)
+    - [func \(typ \*Type\) Examples\(\) \(examples \[\]\*Example\)](<#Type.Examples>)
+    - [func \(typ \*Type\) Funcs\(\) \[\]\*Func](<#Type.Funcs>)
+    - [func \(typ \*Type\) Level\(\) int](<#Type.Level>)
+    - [func \(typ \*Type\) Location\(\) Location](<#Type.Location>)
+    - [func \(typ \*Type\) Methods\(\) \[\]\*Func](<#Type.Methods>)
+    - [func \(typ \*Type\) Name\(\) string](<#Type.Name>)
+    - [func \(typ \*Type\) Summary\(\) string](<#Type.Summary>)
+    - [func \(typ \*Type\) Title\(\) string](<#Type.Title>)
+    - [func \(typ \*Type\) Vars\(\) \[\]\*Value](<#Type.Vars>)
 - [type Value](<#Value>)
-  - [func NewValue\(cfg \*Config, doc \*doc.Value\) \*Value](<#NewValue>)
-  - [func \(v \*Value\) Anchor\(\) string](<#Value.Anchor>)
-  - [func \(v \*Value\) Decl\(\) \(string, error\)](<#Value.Decl>)
-  - [func \(v \*Value\) Doc\(\) \*Doc](<#Value.Doc>)
-  - [func \(v \*Value\) Level\(\) int](<#Value.Level>)
-  - [func \(v \*Value\) Location\(\) Location](<#Value.Location>)
-  - [func \(v \*Value\) Summary\(\) string](<#Value.Summary>)
+    - [func NewValue\(cfg \*Config, doc \*doc.Value\) \*Value](<#NewValue>)
+    - [func \(v \*Value\) Anchor\(\) string](<#Value.Anchor>)
+    - [func \(v \*Value\) Decl\(\) \(string, error\)](<#Value.Decl>)
+    - [func \(v \*Value\) Doc\(\) \*Doc](<#Value.Doc>)
+    - [func \(v \*Value\) Level\(\) int](<#Value.Level>)
+    - [func \(v \*Value\) Location\(\) Location](<#Value.Location>)
+    - [func \(v \*Value\) Summary\(\) string](<#Value.Summary>)
 
 
 <a name="PackageSymbols"></a>
@@ -263,7 +263,7 @@ type Config struct {
 ```
 
 <a name="NewConfig"></a>
-### func [NewConfig](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L69>)
+### func [NewConfig](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L70>)
 
 ```go
 func NewConfig(log logger.Logger, workDir string, pkgDir string, opts ...ConfigOption) (*Config, error)
@@ -272,7 +272,7 @@ func NewConfig(log logger.Logger, workDir string, pkgDir string, opts ...ConfigO
 NewConfig generates a Config for the provided package directory. It will resolve the filepath and attempt to determine the repository containing the directory. If no repository is found, the Repo field will be set to nil. An error is returned if the provided directory is invalid.
 
 <a name="Config.Inc"></a>
-### func \(\*Config\) [Inc](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L124>)
+### func \(\*Config\) [Inc](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L128>)
 
 ```go
 func (c *Config) Inc(step int) *Config
@@ -281,7 +281,7 @@ func (c *Config) Inc(step int) *Config
 Inc copies the Config and increments the level by the provided step.
 
 <a name="ConfigOption"></a>
-## type [ConfigOption](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L62>)
+## type [ConfigOption](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L63>)
 
 ConfigOption modifies the Config generated by NewConfig.
 
@@ -290,7 +290,7 @@ type ConfigOption func(c *Config) error
 ```
 
 <a name="ConfigWithRepoOverrides"></a>
-### func [ConfigWithRepoOverrides](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L140>)
+### func [ConfigWithRepoOverrides](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L144>)
 
 ```go
 func ConfigWithRepoOverrides(overrides *Repo) ConfigOption
@@ -676,7 +676,7 @@ func (l *List) Items() []*Item
 Items returns the slice of items in the list.
 
 <a name="Location"></a>
-## type [Location](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L47-L53>)
+## type [Location](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L48-L54>)
 
 Location holds information for identifying a position within a file and repository, if present.
 
@@ -691,7 +691,7 @@ type Location struct {
 ```
 
 <a name="NewLocation"></a>
-### func [NewLocation](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L361>)
+### func [NewLocation](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L365>)
 
 ```go
 func NewLocation(cfg *Config, node ast.Node) Location
@@ -884,7 +884,7 @@ type PackageOptions struct {
 ```
 
 <a name="Position"></a>
-## type [Position](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L56-L59>)
+## type [Position](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L57-L60>)
 
 Position represents a line and column number within a file.
 
@@ -896,13 +896,14 @@ type Position struct {
 ```
 
 <a name="Repo"></a>
-## type [Repo](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L39-L43>)
+## type [Repo](<https://github.com/frgrisk/gomarkdoc/blob/master/lang/config.go#L39-L44>)
 
 Repo represents information about a repository relevant to documentation generation.
 
 ```go
 type Repo struct {
     Remote        string
+    SkipRemote    bool
     DefaultBranch string
     PathFromRoot  string
 }

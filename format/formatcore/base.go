@@ -110,7 +110,7 @@ func ListEntry(depth int, text string) string {
 		return ""
 	}
 
-	prefix := strings.Repeat("  ", depth)
+	prefix := strings.Repeat("    ", depth)
 	return fmt.Sprintf("%s- %s", prefix, text)
 }
 
